@@ -7,13 +7,14 @@
 
 import Foundation
 
-struct Trivia: Codable {
-    let category: String
-    let type: String
-    let difficulty: String
+struct Trivia: Identifiable {
+    let id: Int
+    let answer: String
     let question: String
-    let correct_answer: String
+    let value: Int
 }
 
-let exampleTrivia = Trivia(category: "Sports", type: "multiple", difficulty: "medium", question: "What is the name of the AHL affiliate of the Toronto Maple Leafs?", correct_answer: "Toronto Marlies")
-
+let exampleTrivia = Trivia(id: 41374,
+                           answer: "the Flying Dutchman",
+                           question: "\"The Rime of the Ancient Mariner\" was based on the legend of this ghost ship",
+                           value: 400)
