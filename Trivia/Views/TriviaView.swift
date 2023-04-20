@@ -22,7 +22,9 @@ struct TriviaView: View {
                     .multilineTextAlignment(.center)
                 
                 Button(action: {
-                    answerOpacity = 1.0
+                    withAnimation(.easeIn(duration: 1.0)) {
+                        answerOpacity = 1.0
+                    }
                 }, label: {
                     Image(systemName: "arrow.down.circle.fill")
                         .resizable()
