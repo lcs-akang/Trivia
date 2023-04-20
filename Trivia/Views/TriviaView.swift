@@ -38,7 +38,7 @@ struct TriviaView: View {
                             .tint(.black)
                     })
                     
-                    Text(currentTrivia.answer)
+                    Text(currentTrivia.correct_answer)
                         .font(.title)
                         .multilineTextAlignment(.center)
                         .opacity(answerOpacity)

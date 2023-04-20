@@ -13,6 +13,7 @@
 		A78C881529F1696200B3FE88 /* TriviaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C881429F1696200B3FE88 /* TriviaView.swift */; };
 		A78C881829F16CED00B3FE88 /* Trivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C881729F16CED00B3FE88 /* Trivia.swift */; };
 		A78C881B29F171D000B3FE88 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C881A29F171D000B3FE88 /* NetworkService.swift */; };
+		A78C881D29F17DA400B3FE88 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C881C29F17DA400B3FE88 /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		A78C881429F1696200B3FE88 /* TriviaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaView.swift; sourceTree = "<group>"; };
 		A78C881729F16CED00B3FE88 /* Trivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivia.swift; sourceTree = "<group>"; };
 		A78C881A29F171D000B3FE88 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A78C881C29F17DA400B3FE88 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				A78C881729F16CED00B3FE88 /* Trivia.swift */,
+				A78C881C29F17DA400B3FE88 /* SearchResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			files = (
 				A78C880629F1669E00B3FE88 /* TriviaApp.swift in Sources */,
 				A78C881829F16CED00B3FE88 /* Trivia.swift in Sources */,
+				A78C881D29F17DA400B3FE88 /* SearchResult.swift in Sources */,
 				A78C881B29F171D000B3FE88 /* NetworkService.swift in Sources */,
 				A78C881529F1696200B3FE88 /* TriviaView.swift in Sources */,
 			);
