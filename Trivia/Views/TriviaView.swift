@@ -13,11 +13,13 @@ struct TriviaView: View {
     
     @State var answerOpacity = 0.0
     
+    @State var currentTrivia = exampleTrivia
+    
     // MARK: Computed properties
     var body: some View {
         NavigationView {
             VStack {
-                Text("Which nation hosted the FIFA World Cup in 2006?")
+                Text(currentTrivia.question)
                     .font(.title)
                     .multilineTextAlignment(.center)
                 
@@ -33,7 +35,7 @@ struct TriviaView: View {
                         .tint(.black)
                 })
                 
-                Text("Germany")
+                Text(currentTrivia.answer)
                     .font(.title)
                     .multilineTextAlignment(.center)
                     .opacity(answerOpacity)
