@@ -39,7 +39,7 @@ struct TriviaView: View {
                     .opacity(answerOpacity)
                 
             }
-            .navigationTitle("Sports Trivia")
+            .navigationTitle("Trivia")
         }
     }
 }
