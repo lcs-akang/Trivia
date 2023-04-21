@@ -20,6 +20,10 @@ struct TriviaView: View {
         NavigationView {
             VStack {
                 
+                
+                Spacer()
+                
+                
                 if let currentTrivia = exampleTrivia {
                     
                     Text(exampleTrivia.question)
@@ -46,6 +50,27 @@ struct TriviaView: View {
                 } else {
                     ProgressView()
                 }
+                
+                
+                Spacer()
+                
+                
+                Button(action: {
+                                     // Reset the interface
+                                     answerOpacity = 0.0
+
+                                     Task {
+                                         // Get another joke
+                                         withAnimation {
+                                             currentTrivia = nil
+                                         }
+                                         currentTrivia = await NetworkService.fetch()
+                                     }
+                                 }, label: {
+                                     Text("Fetch another one")
+                                 })
+                                 .disabled(answerOpacity == 0.0 ? true : false)
+                                 .buttonStyle(.borderedProminent)
                 
             }
             .navigationTitle("Trivia")
