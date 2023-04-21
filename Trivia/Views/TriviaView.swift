@@ -20,9 +20,9 @@ struct TriviaView: View {
         NavigationView {
             VStack {
                 
-                if let currentTrivia = currentTrivia {
+                if let currentTrivia = exampleTrivia {
                     
-                    Text(currentTrivia.question)
+                    Text(exampleTrivia.question)
                         .font(.title)
                         .multilineTextAlignment(.center)
                     
@@ -38,7 +38,7 @@ struct TriviaView: View {
                             .tint(.black)
                     })
                     
-                    Text(currentTrivia.answer)
+                    Text(exampleTrivia.correct_answer)
                         .font(.title)
                         .multilineTextAlignment(.center)
                         .opacity(answerOpacity)

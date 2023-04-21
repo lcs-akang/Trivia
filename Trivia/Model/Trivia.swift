@@ -7,14 +7,18 @@
 
 import Foundation
 
-struct Trivia: Identifiable, Codable {
-    let id: Int
-    let answer: String
+struct Trivia: Codable {
+    let category: String
+    let type: String
+    let difficulty: String
     let question: String
-    let value: Int
+    let correct_answer: String
+    let incorrect_answers: [String]
 }
 
-let exampleTrivia = Trivia(id: 41374,
-                           answer: "the Flying Dutchman",
-                           question: "\"The Rime of the Ancient Mariner\" was based on the legend of this ghost ship",
-                           value: 400)
+let exampleTrivia = Trivia(category: "Mythology",
+                           type: "multiple",
+                           difficulty: "medium",
+                           question: "Which greek god/goddess tossed a golden apple with the words 'for the fairest' into the middle of the feast of the gods?",
+                           correct_answer: "Eris",
+                           incorrect_answers: ["Hades", "Ares", "Artemis"])
