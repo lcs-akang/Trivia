@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Trivia: Codable {
+struct TriviaResult: Codable {
+    let response_code: Int
+    let results: [TriviaQuestion]
+}
+
+struct TriviaQuestion: Codable {
     let category: String
     let type: String
     let difficulty: String
@@ -16,9 +21,11 @@ struct Trivia: Codable {
     let incorrect_answers: [String]
 }
 
-let exampleTrivia = Trivia(category: "Mythology",
-                           type: "multiple",
-                           difficulty: "medium",
-                           question: "Which greek god/goddess tossed a golden apple with the words 'for the fairest' into the middle of the feast of the gods?",
-                           correct_answer: "Eris",
-                           incorrect_answers: ["Hades", "Ares", "Artemis"])
+
+
+//let exampleTrivia = Trivia(category: "Mythology",
+//                           type: "multiple",
+//                           difficulty: "medium",
+//                           question: "Which greek god/goddess tossed a golden apple with the words 'for the fairest' into the middle of the feast of the gods?",
+//                           correct_answer: "Eris",
+//                           incorrect_answers: ["Hades", "Ares", "Artemis"])

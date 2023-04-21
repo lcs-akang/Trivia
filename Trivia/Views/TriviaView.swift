@@ -13,7 +13,7 @@ struct TriviaView: View {
     
     @State var answerOpacity = 0.0
     
-    @State var currentTrivia: Trivia?
+    @State var currentTrivia: TriviaQuestion?
     
     // MARK: Computed properties
     var body: some View {
@@ -24,9 +24,9 @@ struct TriviaView: View {
                 Spacer()
                 
                 
-                if let currentTrivia = exampleTrivia {
+                if let currentTrivia = currentTrivia {
                     
-                    Text(exampleTrivia.question)
+                    Text(currentTrivia.question)
                         .font(.title)
                         .multilineTextAlignment(.center)
                     
@@ -42,7 +42,7 @@ struct TriviaView: View {
                             .tint(.black)
                     })
                     
-                    Text(exampleTrivia.correct_answer)
+                    Text(currentTrivia.correct_answer)
                         .font(.title)
                         .multilineTextAlignment(.center)
                         .opacity(answerOpacity)

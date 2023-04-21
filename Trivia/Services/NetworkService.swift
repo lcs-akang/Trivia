@@ -19,7 +19,7 @@ struct NetworkService {
     // in our app. Since this function might take a while to complete
     // this ensures that other parts of our app (like the user interface)
     // won't "freeze up" while this function does it's job.
-    static func fetch() async -> Trivia? {
+    static func fetch() async -> TriviaQuestion? {
         
         // 1. Attempt to create a URL from the address provided
         let endpoint = "https://opentdb.com/api.php?amount=1&type=multiple"
@@ -45,10 +45,14 @@ struct NetworkService {
             let decoder = JSONDecoder()
             
             // Use the decoder object to convert the raw data into an instance of our Swift data type
-            let decodedData = try decoder.decode(Trivia.self, from: data)
+            let decodedData = try decoder.decode(TriviaResult.self, from: data)
 
             // If we got here, decoding succeeded, return the instance of our data type
-            return decodedData
+            if decodedData.results.count > 0 {
+                return decodedData.results.first!
+            } else {
+                return nil
+            }
             
         } catch {
             
