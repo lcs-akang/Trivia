@@ -15,6 +15,10 @@ struct TriviaView: View {
     
     @State var currentTrivia: TriviaQuestion?
     
+    @State var trueColour: Color = .black
+    @State var falseColour: Color = .black
+    
+    
     // MARK: Computed properties
     var body: some View {
         NavigationView {
@@ -27,20 +31,33 @@ struct TriviaView: View {
                 if let currentTrivia = currentTrivia {
                     
                     Text(currentTrivia.question)
-                        .font(.title)
+                        .font(.title2)
                         .multilineTextAlignment(.center)
+                    
+                    VStack {
+                        
+                        HStack(spacing: 25) {
+                            Text("True")
+                                .font(.title)
+                                .foregroundColor(trueColour)
+                            
+                            Text("False")
+                                .font(.title)
+                                .foregroundColor(falseColour)
+
+                        }
+                        
+                    }
+                    .padding()
                     
                     Button(action: {
                         withAnimation(.easeIn(duration: 1.0)) {
                             answerOpacity = 1.0
                         }
                     }, label: {
-                        Image(systemName: "arrow.down.circle.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 40)
-                            .tint(.black)
+                        Text("Give me the Answer")
                     })
+                    .buttonStyle(.borderedProminent)
                     
                     Text(currentTrivia.correct_answer)
                         .font(.title)

@@ -22,7 +22,7 @@ struct NetworkService {
     static func fetch() async -> TriviaQuestion? {
         
         // 1. Attempt to create a URL from the address provided
-        let endpoint = "https://opentdb.com/api.php?amount=1&type=multiple"
+        let endpoint = "https://opentdb.com/api.php?amount=1&type=boolean"
         guard let url = URL(string: endpoint) else {
             print("Invalid address for JSON endpoint.")
             return nil
