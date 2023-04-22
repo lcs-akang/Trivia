@@ -15,8 +15,10 @@ struct TriviaView: View {
     
     @State var currentTrivia: TriviaQuestion?
     
-    @State var trueColour: Color = .black
-    @State var falseColour: Color = .black
+    @State var trueColor: Color = .black
+    @State var falseColor: Color = .black
+    
+    @State var answerShown: Bool = false
     
     
     // MARK: Computed properties
@@ -39,11 +41,14 @@ struct TriviaView: View {
                         HStack(spacing: 25) {
                             Text("True")
                                 .font(.title)
-                                .foregroundColor(trueColour)
+                                .foregroundColor(trueColor)
+                            
+                            Text("OR")
+                                .font(.title3)
                             
                             Text("False")
                                 .font(.title)
-                                .foregroundColor(falseColour)
+                                .foregroundColor(falseColor)
 
                         }
                         
@@ -51,12 +56,28 @@ struct TriviaView: View {
                     .padding()
                     
                     Button(action: {
-                        withAnimation(.easeIn(duration: 1.0)) {
-                            answerOpacity = 1.0
+                        withAnimation(.easeIn(duration: 0.5)) {
+                            
+                            if case currentTrivia.correct_answer = "True" {
+                                
+                                trueColor = .green
+                                falseColor = .red
+                                
+                            } else {
+                                
+                                trueColor = .red
+                                falseColor = .green
+                                
+                            }
+                            
                         }
+                        
+                        answerShown = true
+                    
                     }, label: {
                         Text("Give me the Answer")
                     })
+                    .disabled(answerShown == true ? true : false)
                     .buttonStyle(.borderedProminent)
                     
                     Text(currentTrivia.correct_answer)
@@ -74,8 +95,10 @@ struct TriviaView: View {
                 
                 Button(action: {
                                      // Reset the interface
-                                     answerOpacity = 0.0
-
+                                trueColor = .black
+                                falseColor = .black
+                    
+                                answerShown = false
                                      Task {
                                          // Get another joke
                                          withAnimation {
@@ -86,7 +109,7 @@ struct TriviaView: View {
                                  }, label: {
                                      Text("Fetch another one")
                                  })
-                                 .disabled(answerOpacity == 0.0 ? true : false)
+                                .disabled(answerShown == false ? true : false)
                                  .buttonStyle(.borderedProminent)
                 
             }
