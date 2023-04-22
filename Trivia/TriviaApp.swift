@@ -12,6 +12,7 @@ struct TriviaApp: App {
     var body: some Scene {
         WindowGroup {
             TriviaView()
+                .environment(\.blackbirdDatabase, AppDatabase.instance)
         }
     }
 }
