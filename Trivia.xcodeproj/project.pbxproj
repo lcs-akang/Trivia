@@ -15,7 +15,6 @@
 		A78C882229F1E92C00B3FE88 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C882129F1E92C00B3FE88 /* NetworkService.swift */; };
 		A78C882529F20CBF00B3FE88 /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = A78C882429F20CBF00B3FE88 /* Blackbird */; };
 		A78C882729F20FCE00B3FE88 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = A78C882629F20FCE00B3FE88 /* db.sqlite */; };
-		A78C882A29F422D000B3FE88 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C882929F422CF00B3FE88 /* AppDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		A78C881729F16CED00B3FE88 /* Trivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivia.swift; sourceTree = "<group>"; };
 		A78C882129F1E92C00B3FE88 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A78C882629F20FCE00B3FE88 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = SOURCE_ROOT; };
-		A78C882929F422CF00B3FE88 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				A78C880529F1669E00B3FE88 /* TriviaApp.swift */,
-				A78C882829F4225F00B3FE88 /* Helpers */,
 				A78C882029F1E91700B3FE88 /* Services */,
 				A78C881629F16CC000B3FE88 /* Model */,
 				A78C881329F168D100B3FE88 /* Views */,
@@ -103,14 +100,6 @@
 				A78C882129F1E92C00B3FE88 /* NetworkService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		A78C882829F4225F00B3FE88 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				A78C882929F422CF00B3FE88 /* AppDatabase.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +183,6 @@
 				A78C881829F16CED00B3FE88 /* Trivia.swift in Sources */,
 				A78C882229F1E92C00B3FE88 /* NetworkService.swift in Sources */,
 				A78C881529F1696200B3FE88 /* TriviaView.swift in Sources */,
-				A78C882A29F422D000B3FE88 /* AppDatabase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
